@@ -39,7 +39,7 @@ def train(train_iter, dev_iter, model, learning_config):
 
 def save(model, save_dir, save_prefix, steps):
     if not os.path.isdir(save_dir):
-        os.makedirs()
+        os.makedirs(save_dir)
     save_path = os.path.join(save_dir,
                              '{}_steps_{}.pt'.format(save_prefix, steps))
     torch.save(model.state_dict(), save_path)
